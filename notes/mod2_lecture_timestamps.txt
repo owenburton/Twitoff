@@ -1,0 +1,3 @@
+module 2 Aaron's lecture timestamps:
+54:00 - create the app on twitter developer
+1:05:00 - environment variables for the secret stuff
