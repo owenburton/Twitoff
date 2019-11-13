@@ -9,13 +9,6 @@
     <body>
       <h1> Twitoff! </h1>
 
-      <!-- {% block content %}
-      <form action="/user" method="post">
-        <input type="text" name="user_name" placeholder="User to add">
-        <input type="submit" value="Add User">
-      </form>
-      {% endblock %} -->
-
       {% block content %}
       <div>
         <h2>Who's more likely to say it?</h2>
@@ -33,10 +26,6 @@
           <input type="text" name="tweet_text" placeholder="Enter a tweet to predict!">
           <input type="submit" value="Predict who's more likely to say ^that text!">
         </form>
-        <!-- <h3>Recent comparisons:</h3>
-        {% for comparison in comparisons %}
-        <span class="stack">{{ comparison }}</span>
-        {% endfor %} -->
       
         <h2>Users</h2>
         {% for user in users %}

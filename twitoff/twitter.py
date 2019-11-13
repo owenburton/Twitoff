@@ -42,5 +42,3 @@ def add_or_update_user(username):
         raise e
     else:
         DB.session.commit()
-
-# TODO - Write some useful functions

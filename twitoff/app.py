@@ -67,7 +67,7 @@ def create_app():
             message = f'''
                 {tweet_text} 
                 is more likely to be said by 
-                {prediction} than {user1 if prediction else user2}
+                {user1 if prediction else user2} than {user2 if prediction else user1}
                 '''
         return render_template('prediction.html', title='Prediction', message=message)
 

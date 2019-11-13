@@ -1,4 +1,4 @@
-import numpy as numpy
+import numpy as np
 from sklearn.linear_model import LogisticRegression
 from .models import User
 from .twitter import BASILICA
@@ -12,7 +12,7 @@ def predict_user(user1_name, user2_name, tweet_text):
     embeddings = np.vstack([user1_embeddings, user2_embeddings])
     labels = np.concatenate([
         np.ones(len(user1.tweets)),
-        np.zeroes(len(user2.tweets))])
+        np.zeros(len(user2.tweets))])
     log_reg = LogisticRegression().fit(embeddings, labels)
     tweet_embedding = BASILICA.embed_sentence(tweet_text, model='twitter')
     # import pdb; pdb.set_trace()
