@@ -7,12 +7,55 @@
     </head>
 
     <body>
-      <h1> This is Twitoff </h1>
-      <p> Content for Twitoff will go here... </p>
+      <h1> Twitoff! </h1>
+
+      <!-- {% block content %}
+      <form action="/user" method="post">
+        <input type="text" name="user_name" placeholder="User to add">
+        <input type="submit" value="Add User">
+      </form>
+      {% endblock %} -->
+
+      {% block content %}
+      <div>
+        <h2>Who's more likely to say it?</h2>
+        <form action="/compare" method="post">
+          <select name="user1">
+            {% for user in users %}
+            <option value="{{ user.name }}">{{ user.name }}</option>
+            {% endfor %}
+          </select>
+          <select name="user2">
+            {% for user in users %}
+            <option value="{{ user.name }}">{{ user.name }}</option>
+            {% endfor %}
+          </select>
+          <input type="text" name="tweet_text" placeholder="Enter a tweet to predict!">
+          <input type="submit" value="Predict who's more likely to say ^that text!">
+        </form>
+        <!-- <h3>Recent comparisons:</h3>
+        {% for comparison in comparisons %}
+        <span class="stack">{{ comparison }}</span>
+        {% endfor %} -->
+      
+        <h2>Users</h2>
+        {% for user in users %}
+        <a href="/user/{{ user.name }}"><span class="stack">{{ user.name }}</span></a>
+        {% endfor %}
+        <form action="/user" method="post">
+          <input type="text" name="user_name" placeholder="User to add">
+          <input type="submit" value="Add User">
+        </form>
+      </div>
+      {% endblock %}
+
+      
+    <!--
       <ul>
           {% for user in users %}
           <li>{{ user.name }}</li>
           {% endfor %}
       </ul>
+    -->
     </body>
 </html>
