@@ -44,14 +44,14 @@ def create_app():
             tweets=tweets,
             message=message)
 
-    # @app.route('/reset')
-    # def reset():
-    #     DB.drop_all()
-    #     DB.create_all()
-    #     return render_template(
-    #         'base.html', 
-    #         title='DB Reset!',
-    #         users=[])
+    @app.route('/reset')
+    def reset():
+        DB.drop_all()
+        DB.create_all()
+        return render_template(
+            'base.html', 
+            title='DB Reset!',
+            users=[])
 
 # This decorater routes to the comparison page, and the method compares their tweets
     @app.route('/compare', methods=['POST'])
